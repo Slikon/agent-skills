@@ -2,7 +2,9 @@
 
 A small set of [Claude Code](https://claude.com/claude-code) skills for everyday engineering work: capturing handoffs, working through PR review comments, picking up where you left off, keeping READMEs tight, and cutting a wall of text down to the point.
 
-Each skill is a folder under [`skills/`](skills/) with a single `SKILL.md`. They also work with any agent that reads the same skill format.
+Each skill is a folder under [`skills/`](skills/) with a single `SKILL.md`. The format is cross-agent — these install into Claude Code, Cursor, Codex, Gemini CLI, GitHub Copilot, OpenCode, Zed, and [70+ other agents](https://skills.sh) via the [`skills`](https://github.com/vercel-labs/skills) CLI.
+
+> Tooling note: `respond-to-pr-comments` needs the `gh` and `git` CLIs; `handoff`, `next-steps`, and `readme-check` need `git`. `handoff`'s `disable-model-invocation` frontmatter is a Claude Code flag that other agents safely ignore.
 
 ## Skills
 
@@ -18,21 +20,36 @@ Each skill is a folder under [`skills/`](skills/) with a single `SKILL.md`. They
 
 ## Install
 
-Clone the repo and run the installer, which symlinks each skill into `~/.claude/skills/`:
+### With the `skills` CLI (recommended, any agent)
+
+```bash
+# Interactive — pick which skills and which agents
+npx skills add Slikon/claude-skills
+
+# Install everything globally into Claude Code, no prompts
+npx skills add Slikon/claude-skills -g -a claude-code -y
+
+# Other agents, or several at once
+npx skills add Slikon/claude-skills -a cursor -a codex
+
+# Just one skill
+npx skills add Slikon/claude-skills --skill tldr
+```
+
+Update later with `npx skills update`. Browse the ecosystem at [skills.sh](https://skills.sh).
+
+### Without the CLI (Claude Code only)
+
+Clone and run the installer, which symlinks each skill into `~/.claude/skills/`:
 
 ```bash
 git clone https://github.com/Slikon/claude-skills.git
 cd claude-skills
-./install.sh
+./install.sh                                               # into ~/.claude/skills
+CLAUDE_SKILLS_DIR=/path/to/project/.claude/skills ./install.sh   # into one project
 ```
 
-To install into a single project instead of your user config:
-
-```bash
-CLAUDE_SKILLS_DIR=/path/to/project/.claude/skills ./install.sh
-```
-
-Restart Claude Code afterward so it picks up the new skills.
+Restart your agent afterward so it picks up the new skills.
 
 ## Usage
 
