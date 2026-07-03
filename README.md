@@ -1,6 +1,6 @@
-# claude-skills
+# agent-skills
 
-A small set of [Claude Code](https://claude.com/claude-code) skills for everyday engineering work: capturing handoffs, working through PR review comments, picking up where you left off, keeping READMEs tight, and cutting a wall of text down to the point.
+A small set of Agentic skills for everyday engineering work: capturing handoffs, working through PR review comments, picking up where you left off, keeping READMEs tight, and cutting a wall of text down to the point.
 
 Each skill is a folder under [`skills/`](skills/) with a single `SKILL.md`. The format is cross-agent — these install into Claude Code, Cursor, Codex, Gemini CLI, GitHub Copilot, OpenCode, Zed, and [70+ other agents](https://skills.sh) via the [`skills`](https://github.com/vercel-labs/skills) CLI.
 
