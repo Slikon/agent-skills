@@ -1,10 +1,10 @@
 # agent-skills
 
-A small set of Agentic skills for everyday engineering work: capturing handoffs, working through PR review comments, picking up where you left off, keeping READMEs tight, and cutting a wall of text down to the point.
+A small set of Agentic skills for everyday engineering work: capturing handoffs, working through PR review comments, picking up where you left off, keeping READMEs tight, cutting a wall of text down to the point, and saying it again without the jargon.
 
 Each skill is a folder under [`skills/`](skills/) with a single `SKILL.md`. The format is cross-agent — these install into Claude Code, Cursor, Codex, Gemini CLI, GitHub Copilot, OpenCode, Zed, and [70+ other agents](https://skills.sh) via the [`skills`](https://github.com/vercel-labs/skills) CLI.
 
-> Tooling note: `respond-to-pr-comments` needs the `gh` and `git` CLIs; `handoff`, `next-steps`, and `readme-check` need `git`. `handoff`'s `disable-model-invocation` frontmatter is a Claude Code flag that other agents safely ignore.
+> Tooling note: `respond-to-pr-comments` needs the `gh` and `git` CLIs; `handoff`, `next-steps`, and `readme-check` need `git`. the `disable-model-invocation` frontmatter on `handoff` and `bro` is a Claude Code flag that other agents safely ignore.
 
 ## Skills
 
@@ -15,8 +15,9 @@ Each skill is a folder under [`skills/`](skills/) with a single `SKILL.md`. The 
 | [`next-steps`](skills/next-steps/SKILL.md) | Read the latest handoff and lay out the next steps — short and on-topic. | Auto or typed |
 | [`readme-check`](skills/readme-check/SKILL.md) | Make sure the project has a README that's short, complete, and free of fluff. | Auto or typed |
 | [`tldr`](skills/tldr/SKILL.md) | Compress a wall of text into a tight summary. | Auto or typed |
+| [`bro`](skills/bro/SKILL.md) | Restate the last message in plain human language, with no jargon. | You type it |
 
-"Auto" skills carry a `description`, so Claude can fire them on its own; you can also type their name. `handoff` is typed-only by design.
+"Auto" skills carry a `description`, so Claude can fire them on its own; you can also type their name. `handoff` and `bro` are typed-only by design.
 
 ## Install
 
@@ -61,6 +62,7 @@ Type a skill by name in Claude Code:
 /next-steps
 /readme-check
 /tldr
+/bro
 ```
 
 The auto-invoked ones also trigger from natural phrasing — e.g. "that's too long, give me the short version" fires `tldr`, and "what's next?" fires `next-steps`.
