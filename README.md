@@ -25,16 +25,16 @@ Each skill is a folder under [`skills/`](skills/) with a single `SKILL.md`. The 
 
 ```bash
 # Interactive — pick which skills and which agents
-npx skills add Slikon/claude-skills
+npx skills add Slikon/agent-skills
 
 # Install everything globally into Claude Code, no prompts
-npx skills add Slikon/claude-skills -g -a claude-code -y
+npx skills add Slikon/agent-skills -g -a claude-code -y
 
 # Other agents, or several at once
-npx skills add Slikon/claude-skills -a cursor -a codex
+npx skills add Slikon/agent-skills -a cursor -a codex
 
 # Just one skill
-npx skills add Slikon/claude-skills --skill tldr
+npx skills add Slikon/agent-skills --skill tldr
 ```
 
 Update later with `npx skills update`. Browse the ecosystem at [skills.sh](https://skills.sh).
@@ -44,8 +44,8 @@ Update later with `npx skills update`. Browse the ecosystem at [skills.sh](https
 Clone and run the installer, which symlinks each skill into `~/.claude/skills/`:
 
 ```bash
-git clone https://github.com/Slikon/claude-skills.git
-cd claude-skills
+git clone https://github.com/Slikon/agent-skills.git
+cd agent-skills
 ./install.sh                                               # into ~/.claude/skills
 CLAUDE_SKILLS_DIR=/path/to/project/.claude/skills ./install.sh   # into one project
 ```
