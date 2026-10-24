@@ -8,6 +8,7 @@ A small set of agent skills for everyday engineering work. Each skill is a folde
 |-------|--------------|
 | [`teach-codebase`](skills/teach-codebase/SKILL.md) | Build a mental model of an unfamiliar repo: architecture, subsystems, and where to look when changing something. Saved at `.teach/codebase.md`. |
 | [`teach-pr`](skills/teach-pr/SKILL.md) | Explain what a PR or branch actually does before you review it — mental model, traced execution path, what to question. Saved at `.teach/`. |
+| [`create-pr`](skills/create-pr/SKILL.md) | Open or update a PR with a concise, human-first overview at the top, plus explicit notes and screenshots when UI or image size/quality changes. |
 | [`handoff`](skills/handoff/SKILL.md) | Compact the conversation into a handoff doc for the next agent. Saved at `.handoffs/` so it survives a restart. |
 | [`respond-to-pr-comments`](skills/respond-to-pr-comments/SKILL.md) | Work through a PR's review comments: fix the valid ones, reply to the rest explaining why not. Takes a PR url or number. |
 | [`next-steps`](skills/next-steps/SKILL.md) | Read the latest handoff and lay out the next steps. |
@@ -59,6 +60,7 @@ Type any skill by name:
 ```
 /teach-codebase                 # or: /teach-codebase auth
 /teach-pr                       # or: /teach-pr https://github.com/you/repo/pull/42
+/create-pr
 /handoff wiring up the payments webhook
 /respond-to-pr-comments https://github.com/you/repo/pull/42
 /next-steps
